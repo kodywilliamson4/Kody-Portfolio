@@ -1,0 +1,7 @@
+Building file: ../src/CStopWatch.cpp
+Invoking: GCC C++ Compiler
+cc -I../src  -I-I/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/include/ -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -fopenmp    -L-L/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/lib -lgomp -lmpi -lboost_mpi -lboost_serialization -MMD -MP -MF"src/CStopWatch.d" -MT"src/CStopWatch.d" -o "src/CStopWatch.o" "../src/CStopWatch.cpp"
+cc: error: unrecognized command line option ‘-std=c++17’
+make: *** [src/CStopWatch.o] Error 1
+slurmstepd: error: execve(): cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0646: task 0: Exited with exit code 2

@@ -1,0 +1,1349 @@
+Building file: ../src/CStopWatch.cpp
+Invoking: GCC C++ Compiler
+mpicxx -I../src -I/boost_1_75_0 -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -I    -L -lboost_mpi -lboost_serialization -MMD -MP -MF"src/CStopWatch.d" -MT"src/CStopWatch.d" -o "src/CStopWatch.o" "../src/CStopWatch.cpp"
+Finished building: ../src/CStopWatch.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+mpicxx -I../src -I/boost_1_75_0 -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -I    -L -lboost_mpi -lboost_serialization -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp(40): error: expected a ";"
+      }
+      ^
+
+../src/main.cpp(104): error: identifier "mt19937" is undefined
+      static thread_local mt19937* generator = nullptr;
+                          ^
+
+../src/main.cpp(106): error: expected a type specifier
+          generator = new mt19937(clock());
+                          ^
+
+../src/main.cpp(108): error: identifier "uniform_real_distribution" is undefined
+      uniform_real_distribution<double> distribution(min, max);
+      ^
+
+../src/main.cpp(108): error: type name is not allowed
+      uniform_real_distribution<double> distribution(min, max);
+                                ^
+
+../src/main.cpp(108): error: identifier "distribution" is undefined
+      uniform_real_distribution<double> distribution(min, max);
+                                        ^
+
+../src/main.cpp(112): error: identifier "vector" is undefined
+  double Rastrigin(vector<double> &R, int Nd, int p){ // Rastrigin
+                   ^
+
+../src/main.cpp(112): error: type name is not allowed
+  double Rastrigin(vector<double> &R, int Nd, int p){ // Rastrigin
+                          ^
+
+../src/main.cpp(112): error: identifier "R" is undefined
+  double Rastrigin(vector<double> &R, int Nd, int p){ // Rastrigin
+                                   ^
+
+../src/main.cpp(112): error: expected a ")"
+  double Rastrigin(vector<double> &R, int Nd, int p){ // Rastrigin
+                                    ^
+
+../src/main.cpp(112): error: expected a ";"
+  double Rastrigin(vector<double> &R, int Nd, int p){ // Rastrigin
+                                                    ^
+
+../src/main.cpp(144): warning #12: parsing restarts here after previous syntax error
+      int num = Np / numProcs;
+                             ^
+
+../src/main.cpp(145): error #77: this declaration has no storage class or type specifier
+      myNp.resize(num);
+      ^
+
+../src/main.cpp(145): error: expected a ";"
+      myNp.resize(num);
+          ^
+
+../src/main.cpp(146): error #77: this declaration has no storage class or type specifier
+      myBest.resize(numProcs);
+      ^
+
+../src/main.cpp(146): error: expected a ";"
+      myBest.resize(numProcs);
+            ^
+
+../src/main.cpp(148): error: identifier "Np" is undefined
+      Swarm swarm(Np, Nd);
+                  ^
+
+../src/main.cpp(148): error: identifier "Nd" is undefined
+      Swarm swarm(Np, Nd);
+                      ^
+
+../src/main.cpp(150): error #77: this declaration has no storage class or type specifier
+      mpi::scatter(world, swarm.particles, myP.data(), num, 0);
+      ^
+
+../src/main.cpp(150): error: no instance of overloaded function "boost::mpi::scatter" matches the specified type
+      mpi::scatter(world, swarm.particles, myP.data(), num, 0);
+           ^
+
+../src/main.cpp(150): error: identifier "world" is undefined
+      mpi::scatter(world, swarm.particles, myP.data(), num, 0);
+                   ^
+
+../src/main.cpp(150): error: expected a ")"
+      mpi::scatter(world, swarm.particles, myP.data(), num, 0);
+                        ^
+
+../src/main.cpp(156): error: expected a declaration
+      if(myRank == 0)
+      ^
+
+../src/main.cpp(175): warning #12: parsing restarts here after previous syntax error
+      MPI_Allreduce(&numEvals, &numEvals, 1, MPI_INIT, MPI_SUM, MPI_COMM_WORLD);          //Check correctness later
+                                                                               ^
+
+../src/main.cpp(177): error: expected a declaration
+      for (int j = 1; j < Nt; j++){
+      ^
+
+../src/main.cpp(216): warning #12: parsing restarts here after previous syntax error
+          mpi::gather(world, myB, myBest, 0);
+                                            ^
+
+../src/main.cpp(218): error: expected a declaration
+          if(myRank == 0)
+          ^
+
+../src/main.cpp(233): warning #12: parsing restarts here after previous syntax error
+          mpi::broadcast(world, gBestValue, 0);
+                                              ^
+
+../src/main.cpp(234): error #77: this declaration has no storage class or type specifier
+          mpi::broadcast(world, gBestPosition, 0);
+          ^
+
+../src/main.cpp(234): error: no instance of overloaded function "boost::mpi::broadcast" matches the specified type
+          mpi::broadcast(world, gBestPosition, 0);
+               ^
+
+../src/main.cpp(234): error: expected a ")"
+          mpi::broadcast(world, gBestPosition, 0);
+                              ^
+
+../src/main.cpp(236): error: expected a declaration
+          if (gBestValue >= -0.0001)
+          ^
+
+../src/main.cpp(244): warning #12: parsing restarts here after previous syntax error
+          w = wMax - ((wMax - wMin) / Nt) * j;
+                                             ^
+
+../src/main.cpp(245): error: expected a declaration
+          for (int p = 0; p < num; p++){
+          ^
+
+../src/main.cpp(258): warning #12: parsing restarts here after previous syntax error
+      timer.stopTimer();
+                       ^
+
+../src/main.cpp(260): error #77: this declaration has no storage class or type specifier
+      std::cout << gBestValue << "," << Np << "," << Nd <<"," << numEvals <<"," << timer.getElapsedTime() << std::endl;
+      ^
+
+../src/main.cpp(260): error: declaration is incompatible with "std::ostream std::cout" (declared at line 61 of "/usr/local/gnu/8.4.0/include/c++/8.4.0/iostream")
+      std::cout << gBestValue << "," << Np << "," << Nd <<"," << numEvals <<"," << timer.getElapsedTime() << std::endl;
+           ^
+
+../src/main.cpp(260): error: expected a ";"
+      std::cout << gBestValue << "," << Np << "," << Nd <<"," << numEvals <<"," << timer.getElapsedTime() << std::endl;
+                ^
+
+../src/main.cpp(261): error: expected a declaration
+  }
+  ^
+
+../src/main.cpp(284): warning #12: parsing restarts here after previous syntax error
+              PSO(Np, Nd, rPtr);
+                               ^
+
+../src/main.cpp(285): error: expected a declaration
+          }
+          ^
+
+../src/main.cpp(288): warning #12: parsing restarts here after previous syntax error
+      rPtr = NULL;
+                 ^
+
+../src/main.cpp(290): error: expected a declaration
+      return 0;
+      ^
+
+../src/main.cpp(291): error: expected a declaration
+  }
+  ^
+
+compilation aborted for ../src/main.cpp (code 2)
+make: *** [src/main.o] Error 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: task 0: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0212: task 7: Exited with exit code 2
+srun: error: o0209: task 4: Exited with exit code 2
+srun: error: o0211: task 6: Exited with exit code 2
+srun: error: o0208: task 3: Exited with exit code 2
+srun: error: o0206: task 1: Exited with exit code 2
+srun: error: o0210: task 5: Exited with exit code 2
+srun: error: o0214: task 9: Exited with exit code 2
+srun: error: o0216: task 11: Exited with exit code 2
+srun: error: o0213: task 8: Exited with exit code 2
+srun: error: o0207: task 2: Exited with exit code 2
+srun: error: o0215: task 10: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: task 1: Exited with exit code 2
+srun: error: o0213: task 17: Exited with exit code 2
+srun: error: o0209: task 9: Exited with exit code 2
+srun: error: o0215: task 21: Exited with exit code 2
+srun: error: o0212: task 15: Exited with exit code 2
+srun: error: o0210: task 11: Exited with exit code 2
+srun: error: o0208: task 7: Exited with exit code 2
+srun: error: o0206: task 3: Exited with exit code 2
+srun: error: o0207: task 5: Exited with exit code 2
+srun: error: o0211: task 13: Exited with exit code 2
+srun: error: o0216: task 23: Exited with exit code 2
+srun: error: o0214: task 19: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0213: task 16: Exited with exit code 2
+srun: error: o0212: task 14: Exited with exit code 2
+srun: error: o0210: task 10: Exited with exit code 2
+srun: error: o0209: task 8: Exited with exit code 2
+srun: error: o0208: task 6: Exited with exit code 2
+srun: error: o0215: task 20: Exited with exit code 2
+srun: error: o0207: task 4: Exited with exit code 2
+srun: error: o0206: task 2: Exited with exit code 2
+srun: error: o0216: task 22: Exited with exit code 2
+srun: error: o0211: task 12: Exited with exit code 2
+srun: error: o0214: task 18: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0213: tasks 25-26: Exited with exit code 2
+srun: error: o0216: tasks 34-35: Exited with exit code 2
+srun: error: o0214: tasks 28-29: Exited with exit code 2
+srun: error: o0210: tasks 16-17: Exited with exit code 2
+srun: error: o0212: tasks 22-23: Exited with exit code 2
+srun: error: o0205: tasks 1-2: Exited with exit code 2
+srun: error: o0208: tasks 10-11: Exited with exit code 2
+srun: error: o0215: tasks 31-32: Exited with exit code 2
+srun: error: o0207: tasks 7-8: Exited with exit code 2
+srun: error: o0209: tasks 13-14: Exited with exit code 2
+srun: error: o0211: tasks 19-20: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0206: tasks 4-5: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0213: task 24: Exited with exit code 2
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0209: task 12: Exited with exit code 2
+srun: error: o0216: task 33: Exited with exit code 2
+srun: error: o0215: task 30: Exited with exit code 2
+srun: error: o0208: task 9: Exited with exit code 2
+srun: error: o0212: task 21: Exited with exit code 2
+srun: error: o0210: task 15: Exited with exit code 2
+srun: error: o0207: task 6: Exited with exit code 2
+srun: error: o0214: task 27: Exited with exit code 2
+srun: error: o0211: task 18: Exited with exit code 2
+srun: error: o0206: task 3: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0213: tasks 33-35: Exited with exit code 2
+srun: error: o0216: tasks 45-47: Exited with exit code 2
+srun: error: o0207: tasks 9-11: Exited with exit code 2
+srun: error: o0209: tasks 17-19: Exited with exit code 2
+srun: error: o0215: tasks 41-43: Exited with exit code 2
+srun: error: o0214: tasks 37-39: Exited with exit code 2
+srun: error: o0210: tasks 21-23: Exited with exit code 2
+srun: error: o0206: tasks 5-7: Exited with exit code 2
+srun: error: o0208: tasks 13-15: Exited with exit code 2
+srun: error: o0205: tasks 1-3: Exited with exit code 2
+srun: error: o0212: tasks 29-31: Exited with exit code 2
+srun: error: o0211: tasks 25-27: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0216: task 44: Exited with exit code 2
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0213: task 32: Exited with exit code 2
+srun: error: o0214: task 36: Exited with exit code 2
+srun: error: o0211: task 24: Exited with exit code 2
+srun: error: o0208: task 12: Exited with exit code 2
+srun: error: o0215: task 40: Exited with exit code 2
+srun: error: o0212: task 28: Exited with exit code 2
+srun: error: o0207: task 8: Exited with exit code 2
+srun: error: o0209: task 16: Exited with exit code 2
+srun: error: o0210: task 20: Exited with exit code 2
+srun: error: o0206: task 4: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0213: tasks 41-44: Exited with exit code 2
+srun: error: o0209: tasks 21-24: Exited with exit code 2
+srun: error: o0214: tasks 46-49: Exited with exit code 2
+srun: error: o0207: tasks 11-14: Exited with exit code 2
+srun: error: o0215: tasks 51-54: Exited with exit code 2
+srun: error: o0208: tasks 16-19: Exited with exit code 2
+srun: error: o0206: tasks 6-9: Exited with exit code 2
+srun: error: o0216: tasks 56-59: Exited with exit code 2
+srun: error: o0211: tasks 31-34: Exited with exit code 2
+srun: error: o0205: tasks 1-4: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0210: tasks 26-29: Exited with exit code 2
+srun: error: o0212: tasks 36-39: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0206: task 5: Exited with exit code 2
+srun: error: o0213: task 40: Exited with exit code 2
+srun: error: o0215: task 50: Exited with exit code 2
+srun: error: o0207: task 10: Exited with exit code 2
+srun: error: o0214: task 45: Exited with exit code 2
+srun: error: o0211: task 30: Exited with exit code 2
+srun: error: o0208: task 15: Exited with exit code 2
+srun: error: o0216: task 55: Exited with exit code 2
+srun: error: o0209: task 20: Exited with exit code 2
+srun: error: o0210: task 25: Exited with exit code 2
+srun: error: o0212: task 35: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0215: tasks 61-65: Exited with exit code 2
+srun: error: o0212: tasks 43-47: Exited with exit code 2
+srun: error: o0216: tasks 67-71: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0207: tasks 13-17: Exited with exit code 2
+srun: error: o0208: tasks 19-23: Exited with exit code 2
+srun: error: o0205: tasks 1-5: Exited with exit code 2
+srun: error: o0206: tasks 7-11: Exited with exit code 2
+srun: error: o0214: tasks 55-59: Exited with exit code 2
+srun: error: o0211: tasks 37-41: Exited with exit code 2
+srun: error: o0213: tasks 49-53: Exited with exit code 2
+srun: error: o0209: tasks 25-29: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0210: tasks 31-35: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0215: task 60: Exited with exit code 2
+srun: error: o0216: task 66: Exited with exit code 2
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0208: task 18: Exited with exit code 2
+srun: error: o0212: task 42: Exited with exit code 2
+srun: error: o0214: task 54: Exited with exit code 2
+srun: error: o0211: task 36: Exited with exit code 2
+srun: error: o0207: task 12: Exited with exit code 2
+srun: error: o0210: task 30: Exited with exit code 2
+srun: error: o0213: task 48: Exited with exit code 2
+srun: error: o0209: task 24: Exited with exit code 2
+srun: error: o0206: task 6: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0207: tasks 15-20: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0214: tasks 64-69: Exited with exit code 2
+srun: error: o0213: tasks 57-62: Exited with exit code 2
+srun: error: o0215: tasks 71-76: Exited with exit code 2
+srun: error: o0209: tasks 29-34: Exited with exit code 2
+srun: error: o0212: tasks 50-55: Exited with exit code 2
+srun: error: o0208: tasks 22-27: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0206: tasks 8-13: Exited with exit code 2
+srun: error: o0211: tasks 43-48: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0210: tasks 36-41: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: tasks 1-6: Exited with exit code 2
+srun: error: o0216: tasks 78-83: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0208: task 21: Exited with exit code 2
+srun: error: o0207: task 14: Exited with exit code 2
+srun: error: o0205: task 0: Exited with exit code 2
+srun: error: o0213: task 56: Exited with exit code 2
+srun: error: o0212: task 49: Exited with exit code 2
+srun: error: o0214: task 63: Exited with exit code 2
+srun: error: o0209: task 28: Exited with exit code 2
+srun: error: o0215: task 70: Exited with exit code 2
+srun: error: o0210: task 35: Exited with exit code 2
+srun: error: o0216: task 77: Exited with exit code 2
+srun: error: o0206: task 7: Exited with exit code 2
+srun: error: o0211: task 42: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0214: tasks 73-79: Exited with exit code 2
+srun: error: o0208: tasks 25-31: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0215: tasks 81-87: Exited with exit code 2
+srun: error: o0216: tasks 89-95: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0212: tasks 57-63: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0206: tasks 9-15: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0209: tasks 33-39: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0213: tasks 65-71: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0210: tasks 41-47: Exited with exit code 2
+srun: error: o0211: tasks 49-55: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0212: task 56: Exited with exit code 2
+srun: error: o0205: tasks 0-7: Exited with exit code 2
+srun: error: o0214: task 72: Exited with exit code 2
+srun: error: o0215: task 80: Exited with exit code 2
+srun: error: o0207: tasks 16-23: Exited with exit code 2
+srun: error: o0206: task 8: Exited with exit code 2
+srun: error: o0208: task 24: Exited with exit code 2
+srun: error: o0209: task 32: Exited with exit code 2
+srun: error: o0216: task 88: Exited with exit code 2
+srun: error: o0213: task 64: Exited with exit code 2
+srun: error: o0211: task 48: Exited with exit code 2
+srun: error: o0210: task 40: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0208: tasks 28-35: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0212: tasks 63-71: Exited with exit code 2
+srun: error: o0215: tasks 90-98: Exited with exit code 2
+srun: error: o0205: tasks 0-8: Exited with exit code 2
+srun: error: o0213: tasks 72-80: Exited with exit code 2
+srun: error: o0216: tasks 99-107: Exited with exit code 2
+srun: error: o0207: tasks 18-26: Exited with exit code 2
+srun: error: o0208: task 27: Exited with exit code 2
+srun: error: o0211: tasks 54-62: Exited with exit code 2
+srun: error: o0209: tasks 36-44: Exited with exit code 2
+srun: error: o0214: tasks 81-89: Exited with exit code 2
+srun: error: o0206: tasks 9-17: Exited with exit code 2
+srun: error: o0210: tasks 45-53: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0210: tasks 50-59: Exited with exit code 2
+srun: error: o0213: tasks 80-89: Exited with exit code 2
+srun: error: o0212: tasks 70-79: Exited with exit code 2
+srun: error: o0207: tasks 20-29: Exited with exit code 2
+srun: error: o0214: tasks 90-99: Exited with exit code 2
+srun: error: o0206: tasks 10-19: Exited with exit code 2
+srun: error: o0208: tasks 30-39: Exited with exit code 2
+srun: error: o0205: tasks 0-9: Exited with exit code 2
+srun: error: o0209: tasks 40-49: Exited with exit code 2
+srun: error: o0216: tasks 110-119: Exited with exit code 2
+srun: error: o0211: tasks 60-69: Exited with exit code 2
+srun: error: o0215: tasks 100-109: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0214: tasks 99-109: Exited with exit code 2
+srun: error: o0208: tasks 33-43: Exited with exit code 2
+srun: error: o0207: tasks 22-32: Exited with exit code 2
+srun: error: o0215: tasks 110-120: Exited with exit code 2
+srun: error: o0213: tasks 88-98: Exited with exit code 2
+srun: error: o0205: tasks 0-10: Exited with exit code 2
+srun: error: o0212: tasks 77-87: Exited with exit code 2
+srun: error: o0216: tasks 121-131: Exited with exit code 2
+srun: error: o0209: tasks 44-54: Exited with exit code 2
+srun: error: o0211: tasks 66-76: Exited with exit code 2
+srun: error: o0206: tasks 11-21: Exited with exit code 2
+srun: error: o0210: tasks 55-65: Exited with exit code 2
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+slurmstepd: error: execve(): /users/PCS0253/kodyw/cs4170_sp2021_a02_williamson/Default/./cs4170_sp2021_a02_williamson: No such file or directory
+srun: error: o0205: tasks 0-11: Exited with exit code 2
+srun: error: o0213: tasks 96-107: Exited with exit code 2
+srun: error: o0215: tasks 120-131: Exited with exit code 2
+srun: error: o0212: tasks 84-95: Exited with exit code 2
+srun: error: o0208: tasks 36-47: Exited with exit code 2
+srun: error: o0210: tasks 60-71: Exited with exit code 2
+srun: error: o0207: tasks 24-35: Exited with exit code 2
+srun: error: o0214: tasks 108-119: Exited with exit code 2
+srun: error: o0206: tasks 12-23: Exited with exit code 2
+srun: error: o0216: tasks 132-143: Exited with exit code 2
+srun: error: o0209: tasks 48-59: Exited with exit code 2
+srun: error: o0211: tasks 72-83: Exited with exit code 2

@@ -1,0 +1,134 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"mvapich"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "mvapich"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -I../src -I/opt/mvapich2/intel/19.0/2.3.3/include -I/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/include -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -fopenmp    -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: MPI
+Invoking: GCC C++ Linker
+g++ -o "Hybrid"   ./src/CStopWatch.o  ./src/main.o -L/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/lib -L/opt/mvapich2/intel/19.0/2.3.3/lib -lmpich -libverbs -lpthread -lgomp -lmpi -lboost_mpi -lboost_serialization 
+Finished building target: MPI
+ 
+Hello from Thread 8 of 28 on Node 1 of 4
+Hello from Thread 1 of 28 on Node 1 of 4
+Hello from Thread 27 of 28 on Node 1 of 4
+Hello from Thread 26 of 28 on Node 1 of 4
+Hello from Thread 28 of 28 on Node 1 of 4
+Hello from Thread 7 of 28 on Node 1 of 4
+Hello from Thread 24 of 28 on Node 1 of 4
+Hello from Thread 23 of 28 on Node 1 of 4
+Hello from Thread 25 of 28 on Node 1 of 4
+Hello from Thread 19 of 28 on Node 1 of 4
+Hello from Thread 20 of 28 on Node 1 of 4
+Hello from Thread 21 of 28 on Node 1 of 4
+Hello from Thread 22 of 28 on Node 1 of 4
+Hello from Thread 16 of 28 on Node 1 of 4
+Hello from Thread 17 of 28 on Node 1 of 4
+Hello from Thread 18 of 28 on Node 1 of 4
+Hello from Thread 15 of 28 on Node 1 of 4
+Hello from Thread 12 of 28 on Node 1 of 4
+Hello from Thread 13 of 28 on Node 1 of 4
+Hello from Thread 14 of 28 on Node 1 of 4
+Hello from Thread 9 of 28 on Node 1 of 4
+Hello from Thread 10 of 28 on Node 1 of 4
+Hello from Thread 11 of 28 on Node 1 of 4
+Hello from Thread 6 of 28 on Node 1 of 4
+Hello from Thread 8 of 28 on Node 2 of 4
+Hello from Thread 1 of 28 on Node 2 of 4
+Hello from Thread 28 of 28 on Node 2 of 4
+Hello from Thread 24 of 28 on Node 2 of 4
+Hello from Thread 25 of 28 on Node 2 of 4
+Hello from Thread 26 of 28 on Node 2 of 4
+Hello from Thread 27 of 28 on Node 2 of 4
+Hello from Thread 22 of 28 on Node 2 of 4
+Hello from Thread 7 of 28 on Node 2 of 4
+Hello from Thread 23 of 28 on Node 2 of 4
+Hello from Thread 21 of 28 on Node 2 of 4
+Hello from Thread 18 of 28 on Node 2 of 4
+Hello from Thread 19 of 28 on Node 2 of 4
+Hello from Thread 20 of 28 on Node 2 of 4
+Hello from Thread 15 of 28 on Node 2 of 4
+Hello from Thread 16 of 28 on Node 2 of 4
+Hello from Thread 17 of 28 on Node 2 of 4
+Hello from Thread 14 of 28 on Node 2 of 4
+Hello from Thread 11 of 28 on Node 2 of 4
+Hello from Thread 6 of 28 on Node 2 of 4
+Hello from Thread 12 of 28 on Node 2 of 4
+Hello from Thread 13 of 28 on Node 2 of 4
+Hello from Thread 10 of 28 on Node 2 of 4
+Hello from Thread 9 of 28 on Node 2 of 4
+Hello from Thread 8 of 28 on Node 3 of 4
+Hello from Thread 1 of 28 on Node 3 of 4
+Hello from Thread 27 of 28 on Node 3 of 4
+Hello from Thread 28 of 28 on Node 3 of 4
+Hello from Thread 7 of 28 on Node 3 of 4
+Hello from Thread 24 of 28 on Node 3 of 4
+Hello from Thread 25 of 28 on Node 3 of 4
+Hello from Thread 20 of 28 on Node 3 of 4
+Hello from Thread 26 of 28 on Node 3 of 4
+Hello from Thread 21 of 28 on Node 3 of 4
+Hello from Thread 23 of 28 on Node 3 of 4
+Hello from Thread 22 of 28 on Node 3 of 4
+Hello from Thread 16 of 28 on Node 3 of 4
+Hello from Thread 17 of 28 on Node 3 of 4
+Hello from Thread 19 of 28 on Node 3 of 4
+Hello from Thread 18 of 28 on Node 3 of 4
+Hello from Thread 12 of 28 on Node 3 of 4
+Hello from Thread 13 of 28 on Node 3 of 4
+Hello from Thread 15 of 28 on Node 3 of 4
+Hello from Thread 14 of 28 on Node 3 of 4
+Hello from Thread 9 of 28 on Node 3 of 4
+Hello from Thread 10 of 28 on Node 3 of 4
+Hello from Thread 11 of 28 on Node 3 of 4
+Hello from Thread 6 of 28 on Node 3 of 4
+Hello from Thread 8 of 28 on Node 4 of 4
+Hello from Thread 1 of 28 on Node 4 of 4
+Hello from Thread 28 of 28 on Node 4 of 4
+Hello from Thread 27 of 28 on Node 4 of 4
+Hello from Thread 24 of 28 on Node 4 of 4
+Hello from Thread 7 of 28 on Node 4 of 4
+Hello from Thread 25 of 28 on Node 4 of 4
+Hello from Thread 26 of 28 on Node 4 of 4
+Hello from Thread 21 of 28 on Node 4 of 4
+Hello from Thread 20 of 28 on Node 4 of 4
+Hello from Thread 22 of 28 on Node 4 of 4
+Hello from Thread 23 of 28 on Node 4 of 4
+Hello from Thread 17 of 28 on Node 4 of 4
+Hello from Thread 18 of 28 on Node 4 of 4
+Hello from Thread 19 of 28 on Node 4 of 4
+Hello from Thread 16 of 28 on Node 4 of 4
+Hello from Thread 13 of 28 on Node 4 of 4
+Hello from Thread 14 of 28 on Node 4 of 4
+Hello from Thread 15 of 28 on Node 4 of 4
+Hello from Thread 11 of 28 on Node 4 of 4
+Hello from Thread 10 of 28 on Node 4 of 4
+Hello from Thread 12 of 28 on Node 4 of 4
+Hello from Thread 6 of 28 on Node 4 of 4
+Hello from Thread 9 of 28 on Node 4 of 4
+Hello from Thread 5 of 28 on Node 2 of 4
+Hello from Thread 4 of 28 on Node 2 of 4
+Hello from Thread 3 of 28 on Node 2 of 4
+Hello from Thread 2 of 28 on Node 2 of 4
+Hello from Thread 5 of 28 on Node 3 of 4
+Hello from Thread 4 of 28 on Node 3 of 4
+Hello from Thread 3 of 28 on Node 3 of 4
+Hello from Thread 2 of 28 on Node 3 of 4
+Hello from Thread 5 of 28 on Node 4 of 4
+Hello from Thread 4 of 28 on Node 4 of 4
+Hello from Thread 3 of 28 on Node 4 of 4
+Hello from Thread 2 of 28 on Node 4 of 4
+Hello from Thread 5 of 28 on Node 1 of 4
+Hello from Thread 4 of 28 on Node 1 of 4
+Hello from Thread 3 of 28 on Node 1 of 4
+Hello from Thread 2 of 28 on Node 1 of 4

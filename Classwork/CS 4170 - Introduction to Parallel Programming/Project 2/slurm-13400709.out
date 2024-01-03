@@ -1,0 +1,297 @@
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+mpicxx -I../src -I/boost_1_75_0 -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -I    -L -lboost_mpi -lboost_serialization -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp(270): error: no default constructor exists for class "boost::mpi::environment"
+      mpi::environment env;
+                       ^
+
+compilation aborted for ../src/main.cpp (code 2)
+make: *** [src/main.o] Error 2
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+
+Usage:
+    mpiexec.slurm args executable pgmargs
+
+    where args are comannd line arguments for mpiexec (see below),
+    executable is the name of the eecutable and pgmargs are command line
+    arguments for the executable. For example the following command will run
+    the MPI program a.out on 4 processes:
+
+            mpiexec.slurm -n 4 a.out
+
+    mpiexec.slurm supports the following options:
+
+             [-n nprocs]
+             [-host hostname]
+             [-verbose]
+             [-nostdin]
+             [-allstdin]
+             [-nostdout]
+             [-pernode]
+             [-ppn procspernode]
+             [-config config_file]
+             [-help|-?]
+             [-man]
+

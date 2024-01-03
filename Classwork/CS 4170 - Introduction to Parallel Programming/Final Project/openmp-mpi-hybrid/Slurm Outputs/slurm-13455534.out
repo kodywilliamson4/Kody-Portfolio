@@ -1,0 +1,19 @@
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -I../src -I/opt/mvapich2/intel/19.0/2.3.3/include -I/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/include -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -fopenmp    -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: MPI
+Invoking: GCC C++ Linker
+g++ -o "Hybrid"   ./src/CStopWatch.o  ./src/main.o -L/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/lib -L/opt/mvapich2/intel/19.0/2.3.3/lib -lmpich -libverbs -lpthread -lgomp -lmpi -lboost_mpi -lboost_serialization 
+Finished building target: MPI
+ 
+srun: Warning: can't run 1 processes on 10 nodes, setting nnodes to 1
+srun: Warning: can't run 2 processes on 10 nodes, setting nnodes to 2
+srun: Warning: can't run 3 processes on 10 nodes, setting nnodes to 3
+srun: Warning: can't run 4 processes on 10 nodes, setting nnodes to 4
+srun: Warning: can't run 5 processes on 10 nodes, setting nnodes to 5
+srun: Warning: can't run 6 processes on 10 nodes, setting nnodes to 6
+srun: Warning: can't run 7 processes on 10 nodes, setting nnodes to 7
+srun: Warning: can't run 8 processes on 10 nodes, setting nnodes to 8
+srun: Warning: can't run 9 processes on 10 nodes, setting nnodes to 9

@@ -1,0 +1,79 @@
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -I../src -I/opt/mvapich2/intel/19.0/2.3.3/include -I/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/include -O2 -g -Wall -c -fmessage-length=0 -std=c++17 -fopenmp    -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘void Particle::print()’:
+../src/main.cpp:46:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+         for (int i = 0; i < R.size(); i++){
+                         ~~^~~~~~~~~~
+../src/main.cpp:49:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<double>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+         for (int i = 0; i < V.size(); i++){
+                         ~~^~~~~~~~~~
+../src/main.cpp: In member function ‘void Swarm::print()’:
+../src/main.cpp:82:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<Particle>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+             for (int i = 0; i < particles.size(); i++){
+                             ~~^~~~~~~~~~~~~~~~~~
+../src/main.cpp: In function ‘void PSO(int, int, double (*)(std::vector<double>&, int, int), int)’:
+../src/main.cpp:137:9: warning: unused variable ‘lastStep’ [-Wunused-variable]
+     int lastStep = Nt, bestTimeStep = 0;
+         ^~~~~~~~
+../src/main.cpp:137:24: warning: unused variable ‘bestTimeStep’ [-Wunused-variable]
+     int lastStep = Nt, bestTimeStep = 0;
+                        ^~~~~~~~~~~~
+Finished building: ../src/main.cpp
+ 
+Building target: MPI
+Invoking: GCC C++ Linker
+g++ -o "Hybrid"   ./src/CStopWatch.o  ./src/main.o -L/usr/local/boost/intel/19.0/mvapich2/2.3/1.72.0/lib -L/opt/mvapich2/intel/19.0/2.3.3/lib -lmpich -libverbs -lpthread -lgomp -lmpi -lboost_mpi -lboost_serialization 
+Finished building target: MPI
+ 
+Fitness, Np, Nd, NumEvals, Time
+1,-233.68,1000,30,3000000,9.54604
+1,-245.867,1000,30,3000000,9.27871
+1,-238.238,1000,30,3000000,9.28055
+1,-219.902,1000,30,3000000,9.28622
+1,-233.612,1000,30,3000000,9.28563
+2,-218.958,1000,30,3000000,4.81711
+2,-245.915,1000,30,3000000,5.13929
+2,-235.935,1000,30,3000000,5.15765
+2,-223.71,1000,30,3000000,5.17591
+2,-242.054,1000,30,3000000,5.13064
+3,-240.056,1000,30,3000000,3.82662
+3,-224.66,1000,30,3000000,3.66847
+3,-232.215,1000,30,3000000,3.67417
+3,-238.132,1000,30,3000000,3.66067
+3,-227.702,1000,30,3000000,3.67119
+4,-234.313,1000,30,3000000,3.04515
+4,-244.486,1000,30,3000000,2.76587
+4,-233.332,1000,30,3000000,2.76693
+4,-233.95,1000,30,3000000,2.77943
+4,-232.75,1000,30,3000000,2.78275
+5,-230.858,1000,30,3000000,2.35853
+5,-244.011,1000,30,3000000,2.14553
+5,-218.497,1000,30,3000000,2.14996
+5,-229.778,1000,30,3000000,2.1529
+5,-235.837,1000,30,3000000,2.14636
+6,-232.821,1000,30,3000000,1.85606
+6,-230.173,1000,30,3000000,1.80051
+6,-231.441,1000,30,3000000,1.79853
+6,-228.471,1000,30,3000000,1.801
+6,-234.463,1000,30,3000000,1.79732
+7,-206.148,1000,30,3000000,1.60809
+7,-227.94,1000,30,3000000,1.81565
+7,-237.659,1000,30,3000000,1.8091
+7,-239.121,1000,30,3000000,1.80818
+7,-233.476,1000,30,3000000,1.80859
+8,-207.031,1000,30,3000000,1.67053
+8,-247.703,1000,30,3000000,1.36371
+8,-237.032,1000,30,3000000,1.36279
+8,-250.692,1000,30,3000000,1.36228
+8,-213.041,1000,30,3000000,1.36114
+9,-239.434,1000,30,3000000,1.27062
+9,-229.568,1000,30,3000000,1.2212
+9,-230.126,1000,30,3000000,1.22156
+9,-223.793,1000,30,3000000,1.21858
+9,-227.734,1000,30,3000000,1.22228
+10,-229.904,1000,30,3000000,1.14623
+10,-236.509,1000,30,3000000,1.28193
+10,-237.948,1000,30,3000000,1.28324
+10,-239.226,1000,30,3000000,1.28083
+10,-218.993,1000,30,3000000,1.28184

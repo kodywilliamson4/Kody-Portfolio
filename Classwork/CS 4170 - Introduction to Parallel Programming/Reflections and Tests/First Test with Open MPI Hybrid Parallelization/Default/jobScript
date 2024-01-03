@@ -1,0 +1,18 @@
+#PBS -l nodes=2:ppn=28
+#PBS -l walltime=02:00:00
+#PBS -m ae
+#PBS -j oe
+#PBS -A PCS0246
+#PBS -n jobScript
+
+export MV2_ENABLE_AFFINITY=0
+export OMP_NUM_THREADS=27
+export MV2_CPU_BINDING_POLICY=hybrid
+module load mvapich2
+module load boost
+
+cd $PBS_O_WORKDIR
+make OSC
+mpiexec -ppn 2 ./MPI > $PBS_O_WORKDIR/results.csv
+#mpiexec -ppn 4 ./MPI > $PBS_O_WORKDIR/results.csv
+#mpiexec -ppn 10 ./MPI > $PBS_O_WORKDIR/results.csv
