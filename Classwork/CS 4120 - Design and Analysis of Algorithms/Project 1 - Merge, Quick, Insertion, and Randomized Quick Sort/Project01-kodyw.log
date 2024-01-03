@@ -1,0 +1,112 @@
+Script started on Mon Apr  5 17:15:32 2021
+]0;kodyw@bglinux1:~/williamson_p1[?1034h[kodyw@bglinux1 williamson_p1]$ pwd
+/home/90/kodyw/williamson_p1
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ ls -l
+total 184
+-rw-r--r--. 1 kodyw users  3789 Apr  5 16:58 CStopWatch.cpp
+-rw-r--r--. 1 kodyw users  1919 Apr  5 16:58 CStopWatch.h
+drwxr-xr-x. 2 kodyw users  4096 Apr  5 16:58 [0m[01;34mDataSets[0m
+-rwxr-xr-x. 1 kodyw users 23312 Apr  5 17:13 [01;32mINSERTIONSORT[0m
+-rw-r--r--. 1 kodyw users  7093 Apr  5 16:58 INSERTIONSORT.cpp
+-rwxr-xr-x. 1 kodyw users 24416 Apr  5 17:06 [01;32mMERGESORT[0m
+-rw-r--r--. 1 kodyw users  7652 Apr  5 16:58 MERGESORT.cpp
+-rw-r--r--. 1 kodyw users 10647 Apr  5 16:58 Output.xlsx
+-rw-r--r--. 1 kodyw users     0 Apr  5 17:15 Project01-kodyw.log
+-rwxr-xr-x. 1 kodyw users 23344 Apr  5 17:06 [01;32mQUICKSORT[0m
+-rw-r--r--. 1 kodyw users  7476 Apr  5 16:58 QUICKSORT.cpp
+-rwxr-xr-x. 1 kodyw users 23496 Apr  5 17:07 [01;32mRANDOMIZED_QUICKSORT[0m
+-rw-r--r--. 1 kodyw users  7776 Apr  5 16:58 RANDOMIZED_QUICKSORT.cpp
+-rw-r--r--. 1 kodyw users  2106 Apr  5 16:58 README.txt
+-rw-r--r--. 1 kodyw users 27115 Apr  5 16:58 Williamson_Project1Report.docx
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ g++ -o INSERTIONSORT INSERTIONSORT.C cpp CStopWatchh.cpp
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ ./ INSERTIONSORT[1PINSERTIONSORT
+Input destination of files: /home/90/kodyw/williamson_p1/DataSets/
+10000, 24995207, 69.95
+20000, 100284722, 260.021
+40000, 399037194, 1034.86
+80000, 1601131470, 4226.21
+10000, 9999, 0.035
+20000, 19999, 0.076
+40000, 39999, 0.14
+80000, 79999, 0.282
+10000, 49995000, 127.473
+20000, 199989997, 521.116
+40000, 799979989, 2076.3
+80000, 3199959933, 8277.87
+10000, 9999, 0.035
+20000, 19999, 0.08
+40000, 39999, 0.16
+80000, 79999, 0.297
+
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ ./INSERTIONSORTg++ -o INSERTIONSORT INSERTIONSORT.cpp CStopWatchh.cpp[A[kodyw@bglinux1 williamson_p1]$ g++ -o INSERTIONSORT INSERTIONSORT.cpp CStopWatNSORT INSERTIONSORT.cpp CStopWatch.[1P[Akodyw@bglinux1 williamson_p1]$ g++ -o INSERTIOSORT INSERTIONSORT.cpp CStopWatch.c[1P[Akodyw@bglinux1 williamson_p1]$ g++ -o INSERTISORT INSERTIONSORT.cpp CStopWatch.cpp[K[Aodyw@bglinux1 williamson_p1]$ g++ -o INSERTSORT INSERTIONSORT.cpp CStopWatch.cpp[K[Akodyw@bglinux1 williamson_p1]$ g++ -o INSERSORT INSERTIONSORT.cpp CStopWatch.cp
+[K[A[kodyw@bglinux1 williamson_p1]$ g++ -o INSE[1P
+[K[A[kodyw@bglinux1 williamson_p1]$ g++ -o INS[1P[1P[1P[1@M[1@E[1@RGSORT INSERTIONSORT.cpp CStopWatch.cpp [Akodyw@bglinux1 williamson_p1]$ g++ -o MERGESORT INSERTIONSORT.cpp CStopWatch.c
+p[Akodyw@bglinux1 williamson_p1]$ g++ -o MERGESORT INSERTIONSORT.cpp CStopWatch.cp
+[K[A[kodyw@bglinux1 williamson_p1]$ g++ -o MERGESORT INSERTIO[1P
+[K[A[kodyw@bglinux1 williamson_p1]$ g++ -o MERGESORT INSERTI[1P[1P[1P[1P[1P[1P[1P[1@M[1@E[1@R[1@G[1@E
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ g++ -o MERGESORT MERGESORT.cpp CStopWatch.cpp[kodyw@bglinux1 williamson_p1]$ [30P./INSERTIONSORT[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@M[1@E[1@R[1@G[1@E
+Input destination of files: /home/90/kodyw/williamson_p1/DataSets/
+10000, 123617, 1.693
+20000, 267233, 3.509
+40000, 574465, 8.037
+80000, 1228929, 17.02
+10000, 123617, 1.209
+20000, 267233, 2.504
+40000, 574465, 5.309
+80000, 1228929, 11.235
+10000, 123617, 1.235
+20000, 267233, 2.52
+40000, 574465, 5.354
+80000, 1228929, 10.981
+10000, 123617, 1.209
+20000, 267233, 2.544
+40000, 574465, 5.297
+80000, 1228929, 11.242
+
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ ./MERGESORTg++ -o MERGESORT MERGESORT.cpp CStopWatch.cpp[1P[1P[1P[1P[1P[1@Q[1@U[1@I[1@C[1@KSORT MERGE[1P[1P[1P[1P[1P[1@Q[1@U[1@I[1@C[1@K
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ g++ -o QUICKSORT QUICKSORT.cpp CStopWatch.cpp[kodyw@bglinux1 williamson_p1]$ ./MERGESORT[K[1P[1P[1P[1P[1P[1@Q[1@U[1@I[1@C[1@K
+Input destination of files: /home/90/kodyw/williamson_p1/DataSets/
+10000, 144327, 0.988
+20000, 340830, 2.128
+40000, 726658, 4.776
+80000, 1557700, 9.674
+10000, 49995000, 107.445
+20000, 199990000, 412.909
+40000, 799980000, 1644.53
+80000, 3199960000, 6542.04
+10000, 24923997, 102.119
+20000, 99445167, 403.85
+40000, 395685878, 1626.73
+80000, 1567952809, 6500.33
+10000, 49995000, 104.679
+20000, 199990000, 408.942
+40000, 799980000, 1626.19
+80000, 3199960000, 6553.85
+
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ ./QUICKSORTg++ -o QUICKSORT QUICKSORT.cpp CStopWatch.cpp[1@R[1@ANQUICKSORT QUICKSORT.cpp CStopWatch.cpp [Akodyw@bglinux1 williamson_p1]$ g++ -o RANDQUICKSORT QUICKSORT.cpp CStopWatch.c
+p[Akodyw@bglinux1 williamson_p1]$ g++ -o RANDOQUICKSORT QUICKSORT.cpp CStopWatch.cpp[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMQUICKSORT QUICKSORT.cpp CStopWatch.cpp[Adyw@bglinux1 williamson_p1]$ g++ -o RANDOMIQUICKSORT QUICKSORT.cpp CStopWatch.[1@c[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZQUICKSORT QUICKSORT.cpp CStopWatch[1@.[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZEQUICKSORT QUICKSORT.cpp CStopWatc[1@h[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZEDQUICKSORT QUICKSORT.cpp CStopWat[1@c[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT QUICKSORT.cpp CStopWa[1@t[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RQUICKSORT.cpp CStopW[1@a[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RAQUICKSORT.cpp CStop[1@W[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANQUICKSORT.cpp CSto[1@p[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDQUICKSORT.cpp CSt[1@o[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOQUICKSORT.cpp CS[1@t[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMQUICKSORT.cpp C[1@S[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIQUICKSORT.cpp [1@C[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZQUICKSORT.c
+[1@p[Akodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZEQUICKSORT.cp[1@p[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZEDQUICKSORT.cp[1@p[Adyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZED_QUICKSORT.[1@c[Aodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZED_
+
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ g++ -o RANDOMIZED_QUICKSORT RANDOMIZED_QUICKSORT..cpp CStopWatch.cpp[Aliamson_p1]$ ./QUICKSORT[K
+[K[A[kodyw@bglinux1 williamson_p1]$ ./QUICKSORT[1@R[1@A[1@N[1@D[1@O[1@M[1@I[1@Z[1@E[1@D[1@_
+Input destination of files: /home/90/kodyw/williamson_p1/DataSets/
+10000, 147813, 6.912
+20000, 333676, 14.106
+40000, 731378, 26.629
+80000, 1558480, 53.948
+10000, 1183310, 8.203
+20000, 3302029, 18.503
+40000, 9392673, 42.698
+80000, 26410162, 100.267
+10000, 13385021, 58.017
+20000, 52360150, 219.051
+40000, 205540933, 856.175
+80000, 813292366, 3455.12
+10000, 49995000, 113.656
+20000, 199990000, 427.998
+40000, 799980000, 1675.74
+80000, 3199960000, 6603.64
+
+]0;kodyw@bglinux1:~/williamson_p1[kodyw@bglinux1 williamson_p1]$ exit
+
+Script done on Mon Apr  5 17:25:00 2021

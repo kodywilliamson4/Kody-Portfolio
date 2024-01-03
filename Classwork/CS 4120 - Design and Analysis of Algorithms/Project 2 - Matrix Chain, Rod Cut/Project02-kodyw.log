@@ -1,0 +1,38 @@
+Script started on Mon Apr 26 18:48:42 2021
+]0;kodyw@bglinux1:~/williamson_p2[?1034h[kodyw@bglinux1 williamson_p2]$ pwd
+/home/90/kodyw/williamson_p2
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ ls -l
+total 116
+-rw-r--r--. 1 kodyw users  3789 Apr 26 18:28 CStopWatch.cpp
+-rw-r--r--. 1 kodyw users  1919 Apr 26 18:28 CStopWatch.h
+-rwxr-xr-x. 1 kodyw users 34824 Apr 26 18:38 [0m[01;32mMATRIX_CHAIN[0m
+-rw-r--r--. 1 kodyw users  3147 Apr 26 18:28 MATRIX_CHAIN.cpp
+-rw-r--r--. 1 kodyw users  9114 Apr 26 18:28 Output.xlsx
+-rw-r--r--. 1 kodyw users  1134 Apr 26 18:34 Project02-kodyw.log
+-rw-r--r--. 1 kodyw users     0 Apr 26 18:48 Project02-kodyw2.log
+-rw-r--r--. 1 kodyw users  1495 Apr 26 18:28 README.txt
+-rwxr-xr-x. 1 kodyw users 34488 Apr 26 18:37 [01;32mROD_CUT[0m
+-rw-r--r--. 1 kodyw users  2233 Apr 26 18:36 ROD_CUT.cpp
+-rw-r--r--. 1 kodyw users   662 Apr 26 18:36 TestMat.txt
+-rw-r--r--. 1 kodyw users   335 Apr 26 18:36 TestRodActual.txt
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ g++ -o ROD_CUT ROD_CUT.cpp CStopWatch.cpp
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ ./ROD_CUT
+Input argument n: 10
+Input 10 numbers: 11 13 15 17 17 17 17 19 20 25 27
+110, 0.209
+110, 0.46
+110, 0.006
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ g++ -o MATRIX_CHAIN MATRIX_CHAIN.cpp CStopWatch. cpp
+[01m[KMATRIX_CHAIN.cpp:[m[K In function '[01m[Kint main()[m[K':
+[01m[KMATRIX_CHAIN.cpp:27:6:[m[K [01;35m[Kwarning: [m[Kvariable '[01m[Kprice3[m[K' set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  int [01;35m[Kprice3[m[K;
+      [01;35m[K^~~~~~[m[K
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ ./MATRIX_CHAIN
+Input argument n: 6
+Input 6 numbers: 48 6 26 39 46 13
+24180, 1.7e-05
+24180, 2.2e-05
+24180, 1e-06
+]0;kodyw@bglinux1:~/williamson_p2[kodyw@bglinux1 williamson_p2]$ exit
+
+Script done on Mon Apr 26 18:50:35 2021
