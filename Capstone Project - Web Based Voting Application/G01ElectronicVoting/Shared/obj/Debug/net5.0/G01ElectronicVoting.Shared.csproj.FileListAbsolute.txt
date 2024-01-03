@@ -1,0 +1,12 @@
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\bin\Debug\net5.0\G01ElectronicVoting.Shared.deps.json
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\bin\Debug\net5.0\G01ElectronicVoting.Shared.dll
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\bin\Debug\net5.0\ref\G01ElectronicVoting.Shared.dll
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\bin\Debug\net5.0\G01ElectronicVoting.Shared.pdb
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.csprojAssemblyReference.cache
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.AssemblyInfoInputs.cache
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.AssemblyInfo.cs
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.csproj.CoreCompileInputs.cache
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.dll
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\ref\G01ElectronicVoting.Shared.dll
+C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Shared\obj\Debug\net5.0\G01ElectronicVoting.Shared.pdb

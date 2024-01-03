@@ -1,0 +1,76 @@
+﻿@using G01ElectronicVoting.Shared
+
+@inject IJSRuntime js
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <button class="btn btn-link" type="button" @onclick="ToggleCollapse ">
+                @ThisResult.Title
+            </button>
+        </h5>
+    </div>
+    <div class="collapse @(Collapse ? "" : "show")">
+        @if (mostVotes > 0)
+        {
+            if (!Tie)
+            {
+                <div class="alert alert-success">Winner: @winningCandidate</div>
+            }
+            else
+            {
+                <div class="alert alert-warning">This election ended in a tie</div>
+            }
+            @*<div id="@ChartId" style="width:100%; height:400px" />*@
+            <div style="width:50%;">
+                <ResultChart Data=ThisResult.Votes Labels=ThisResult.Candidates />
+            </div>
+            @*<button class="btn btn-primary" @onclick="GeneratePieChartBlazor">Reload chart</button>*@
+        }
+        else
+        {
+            <div class="alert alert-danger">This election ended with no recorded votes</div>
+        }
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public Result ThisResult { get; set; }
+    [Parameter]
+    public int Index { get; set; }
+
+    private string ChartId { get; set; }
+    private bool Collapse { get; set; } = true;
+    private bool Tie { get; set; } = false;
+
+    private List<Candidate> chartData = new();
+    private int mostVotes = 0;
+    private string winningCandidate;
+
+    private void ToggleCollapse() => Collapse = !Collapse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ChartId = $"chartdiv_pie{Index}";
+
+        for (int i = 0; i < ThisResult.Votes.Length; i++)
+        {
+            chartData.Add(new Candidate(ThisResult.Votes[i], ThisResult.Candidates[i]));
+
+            if (ThisResult.Votes[i] > mostVotes)
+            {
+                mostVotes = ThisResult.Votes[i];
+                winningCandidate = ThisResult.Candidates[i];
+            }
+        }
+
+        if (mostVotes > 0)
+        {
+            Tie = (ThisResult.Votes.Where(x => x == mostVotes).Count() > 1);
+
+        }
+    }
+
+}

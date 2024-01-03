@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\kodyw\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.2\staticwebassets\V4\" />
+</StaticWebAssets>

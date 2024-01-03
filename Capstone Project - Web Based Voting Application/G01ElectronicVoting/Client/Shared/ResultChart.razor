@@ -1,0 +1,44 @@
+﻿@using ChartJs.Blazor
+@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.Util
+@using ChartJs.Blazor.Interop
+@using ChartJs.Blazor.PieChart
+
+<Chart Config="_config"></Chart>
+
+@code {
+    [Parameter]
+    public string[] Labels { get; set; }
+    [Parameter]
+    public int[] Data { get; set; }
+
+    private PieConfig _config;
+
+    protected override void OnInitialized()
+    {
+        _config = new PieConfig
+        {
+            Options = new PieOptions
+            {
+                Responsive = true,
+                Title = new OptionsTitle
+                {
+                    Display = true
+                }
+            }
+        };
+
+        PieDataset<int> dataset = new PieDataset<int>(Data);
+        List<string> availableColors = new() { "#ff4f4f", "#4f72ff", "#6fda80" };
+        List<string> colors = new();
+
+        for (int i = 0; i < dataset.Count(); i++)
+        {
+            _config.Data.Labels.Add(Labels[i]);
+            colors.Add(availableColors[i % availableColors.Count]);
+            dataset.BackgroundColor = colors.ToArray();
+        }
+
+        _config.Data.Datasets.Add(dataset);
+    }
+}

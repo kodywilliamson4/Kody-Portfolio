@@ -1,0 +1,52 @@
+﻿@page "/voting"
+
+@using G01ElectronicVoting.Shared;
+
+@inject HttpClient http
+@inject AuthenticationStateProvider authStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <h3><b>Voting Dashboard</b></h3>
+
+        @if (loading)
+        {
+            <span class="spinner-border spinner-border-sm"></span>
+        }
+
+        @if (currentElections.Count <= 0)
+        {
+            <p>You have no active elections</p>
+        }
+
+        <div class="accordion">
+            @foreach (var e in currentElections)
+            {
+                <ElectionCard ThisElection=e />
+            }
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <RedirectToLogin />
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    private AuthenticationState authState;
+    private List<Election> currentElections = new();
+    private bool loading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await authStateProvider.GetAuthenticationStateAsync();
+        await GetUserElections();
+    }
+
+    private async Task GetUserElections()
+    {
+        loading = true;
+        currentElections = await http.GetFromJsonAsync<List<Election>>($"api/UserElection/{authState.User.Identity.Name}");
+        loading = false;
+    }
+}

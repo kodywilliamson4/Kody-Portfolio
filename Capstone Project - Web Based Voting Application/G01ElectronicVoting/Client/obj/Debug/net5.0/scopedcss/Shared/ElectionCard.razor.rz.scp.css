@@ -1,0 +1,82 @@
+
+
+/*4K Screen*/
+@media only screen and (min-width : 2560px) {
+
+    button[b-8v3iblzjo8] {
+        font-size: 30px;
+        border-radius: 1.5px;
+    }
+
+    b[b-8v3iblzjo8] {
+        font-size: 40px;
+    }
+
+    #candidate-list[b-8v3iblzjo8] {
+        font-size: 35px;
+    }
+}
+/*Larger Screen*/
+@media only screen and (min-width : 1824px) {
+
+    button[b-8v3iblzjo8] {
+        font-size: 25px;
+        border-radius: 1.5px;
+    }
+
+    b[b-8v3iblzjo8] {
+        font-size: 30px;
+    }
+
+    #candidate-list[b-8v3iblzjo8] {
+        font-size: 30px;
+    }
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    button[b-8v3iblzjo8] {
+        font-size: 20px;
+        border-radius: 1.5px;
+    }
+
+    b[b-8v3iblzjo8] {
+        font-size: 25px;
+    }
+
+    #candidate-list[b-8v3iblzjo8] {
+        font-size: 25px;
+    }
+}
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    button[b-8v3iblzjo8] {
+        font-size: 15px;
+        border-radius: 1.5px;
+    }
+
+    b[b-8v3iblzjo8] {
+        font-size: 20px;
+    }
+
+    #candidate-list[b-8v3iblzjo8] {
+        font-size: 20px;
+    }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    button[b-8v3iblzjo8] {
+        font-size: 14px;
+        border-radius: 1.5px;
+    }
+
+    b[b-8v3iblzjo8] {
+        font-size: 20px;
+    }
+
+    #candidate-list[b-8v3iblzjo8] {
+        font-size: 20px;
+    }
+}

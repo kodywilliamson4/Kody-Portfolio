@@ -1,0 +1,67 @@
+﻿
+
+/*4K Screen*/
+@media only screen and (min-width : 2560px) {
+
+    h3 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    
+}
+/*Larger Screen*/
+@media only screen and (min-width : 1824px) {
+
+    h3 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 13px;
+    }
+}
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    h3 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}

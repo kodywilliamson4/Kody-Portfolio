@@ -1,0 +1,8 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\kodyw\csse4770_sp2021_g01\G01ElectronicVoting\Client\wwwroot\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\kodyw\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.3\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/ChartJs.Blazor.Fork" Path="C:\Users\kodyw\.nuget\packages\chartjs.blazor.fork\2.0.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\kodyw\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.3\build\..\staticwebassets\" />
+</StaticWebAssets>

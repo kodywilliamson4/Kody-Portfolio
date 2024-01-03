@@ -1,0 +1,107 @@
+﻿@using G01ElectronicVoting.Shared
+
+@inject HttpClient http
+@inject AuthenticationStateProvider authStateProvider
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <button class="btn btn-link" type="button" disabled=@UserHasAlreadyVoted @onclick="ToggleCollapse">
+                @if (UserHasAlreadyVoted) { <span class="badge badge-secondary">Already voted</span> }
+                @ThisElection.Title
+                <span class="badge badge-info">Created by @ThisElection.Creator</span>
+                <span class="badge @BadgeColor">@BadgeText</span>
+            </button>
+        </h5>
+    </div>
+    <div class="collapse @(Collapse ? "" : "show")">
+        <div class="card-body">
+            <EditForm Model="@model" OnValidSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+
+                <b>Please select your preferred candidate:</b> <br />
+
+                <div id="candidate-list">
+                    <InputRadioGroup @bind-Value="model.Choice">
+                        @foreach (var i in ThisElection.Candidates)
+                        {
+                            <InputRadio Value=i /> @:&nbsp; @i <br />
+                        }
+                    </InputRadioGroup>
+                </div>
+
+                <ValidationSummary />
+                <button type="submit" class="btn btn-info" disabled=@UserHasAlreadyVoted>Cast vote</button>
+                @if (UserHasAlreadyVoted) { <span><i>You have already voted in this election</i></span> }
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public Election ThisElection { get; set; }
+
+    public class VotingFormModel
+    {
+        [Required(ErrorMessage = "Please select a candidate")]
+        public string Choice { get; set; } = null;
+    }
+
+    private const int SOON_DAYS = 3;
+
+    private bool Collapse { get; set; } = true;
+    private string BadgeText { get; set; } = "";
+    private string BadgeColor { get; set; }
+    private bool UserHasAlreadyVoted { get; set; } = false;
+
+    private VotingFormModel model = new VotingFormModel();
+    private AuthenticationState authState;
+    private List<Vote> userVotes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        authState = await authStateProvider.GetAuthenticationStateAsync();
+
+        var daysLeft = (ThisElection.EndDate - DateTime.Now).Days;
+        var hoursLeft = (ThisElection.EndDate - DateTime.Now).Hours;
+
+        if (daysLeft > 0)
+        {
+            BadgeText += daysLeft;
+            BadgeText += $" day{(daysLeft == 1 ? "" : "s")}";
+        }
+        if (hoursLeft > 0)
+        {
+            BadgeText += $" {hoursLeft}";
+            BadgeText += $" hour{(hoursLeft == 1 ? "" : "s")}";
+        }
+        BadgeText += " left";
+
+        BadgeColor = (daysLeft <= SOON_DAYS) ? "badge-danger" : "badge-success";
+
+        UserHasAlreadyVoted = await CheckIfUserHasVoted();
+    }
+
+    private async Task<bool> CheckIfUserHasVoted()
+    {
+        userVotes = await http.GetFromJsonAsync<List<Vote>>($"api/Vote/{authState.User.Identity.Name}");
+        return (userVotes.Where(x => x.ElectionId == ThisElection.Id).Count() > 0);
+    }
+
+    private void ToggleCollapse() => Collapse = !Collapse;
+
+    private async Task HandleSubmit()
+    {
+        UserHasAlreadyVoted = await CheckIfUserHasVoted();
+
+        if (!UserHasAlreadyVoted)
+        {
+            Vote v = new Vote(ThisElection.Id, authState.User.Identity.Name, model.Choice);
+            await http.PostAsJsonAsync("api/Vote", v);
+            UserHasAlreadyVoted = true;
+            Collapse = true;
+        }
+    }
+}

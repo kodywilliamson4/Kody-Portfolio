@@ -1,0 +1,44 @@
+﻿@page "/results"
+
+@using G01ElectronicVoting.Shared;
+
+@inject HttpClient http
+@inject AuthenticationStateProvider authStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <h3>Election Results</h3>
+
+        @if (loading)
+        {
+            <span class="spinner-border spinner-border-sm"></span>
+        }
+
+        <div class="accordion">
+            @for (int i = 0; i < results.Count; i++)
+            {
+                <ResultCard ThisResult=results[i] Index=i />
+            }
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <RedirectToLogin />
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code{
+    private List<Result> results = new();
+    private AuthenticationState authState;
+    private bool loading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        authState = await authStateProvider.GetAuthenticationStateAsync();
+
+        loading = true;
+        results = await http.GetFromJsonAsync<List<Result>>($"api/Result/{authState.User.Identity.Name}");
+        loading = false;
+    }
+}

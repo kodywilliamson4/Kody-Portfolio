@@ -1,0 +1,157 @@
+﻿@using G01ElectronicVoting.Shared
+@using System.Text.RegularExpressions
+
+@inject HttpClient http
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            @if (ThisElection.EndDate < DateTime.Now)
+            {
+                <span style="cursor:pointer" @onclick="HideElection">🗙</span>
+            }
+            <button class="btn btn-link" type="button" @onclick="ToggleCollapse">
+                @ThisElection.Title
+            </button>
+            @{ (string, string) bs = BadgeStatus(ThisElection.StartDate, ThisElection.EndDate); }
+            <span class="badge @bs.Item1">@bs.Item2</span>
+        </h5>
+    </div>
+    <div class="collapse @(Collapse ? "" : "show")">
+        <div class="card-body">
+            <EditForm Model="@model" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+
+                <div class="form-group mb-0">
+                    <label for="add-voter"><b>Add New Voter</b></label>
+                    <InputText id="add-voter" @bind-Value="model.Voter" />
+                </div>
+
+                <div class="form-group mb-0">
+                    <InputCheckbox id="email-new-voter" @bind-Value="model.EmailNewVoter" />
+                    <label for="email-new-voter">Notify new voter by email</label>
+                </div>
+
+                <ValidationSummary />
+
+                <div class="form-group mb-0">
+                    <button type="submit" class="btn btn-info" disabled="@loading" @onclick="() => SubmitMessage = string.Empty">
+                        Add
+                        @if (loading)
+                        {
+                            <div class="spinner-border spinner-border-sm" />
+                        }
+                    </button>
+
+                    <i>@SubmitMessage</i>
+                </div>
+            </EditForm>
+
+            <br />
+
+            @if (ThisElection.StartDate <= DateTime.Now && ThisElection.EndDate > DateTime.Now)
+            {
+                <button type="button" class="btn btn-danger" @onclick="DeleteElection">Close Early</button> <i>Note: Votes will NOT be counted</i>
+            }
+
+            <br />
+
+            <p style="margin-top:16px;">
+                <b>Election Info</b>
+                <br />
+                Start: @ThisElection.StartDate.ToLongDateString()
+                <br />
+                End: @ThisElection.EndDate.ToLongDateString()
+            </p>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public Election ThisElection { get; set; }
+    [Parameter]
+    public EventCallback RefreshElections { get; set; }
+
+    private string SubmitMessage { get; set; } = "";
+
+    public class VoterAddressValidator : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            try
+            {
+                return Regex.Match(value.ToString(), @"^\S+@\S+\.\S+$").Success ? ValidationResult.Success : new ValidationResult("Invalid email address");
+            }
+            catch (RegexMatchTimeoutException _)
+            {
+                return new ValidationResult("Timeout");
+            }
+            catch (Exception _)
+            {
+                throw;
+            }
+        }
+    }
+
+    public class AddVoterFormModel
+    {
+        [Required]
+        [VoterAddressValidator()]
+        public string Voter { get; set; }
+
+        public bool EmailNewVoter { get; set; } = false;
+    }
+
+    private AddVoterFormModel model = new();
+
+    private bool loading = false;
+
+    private bool Collapse { get; set; } = true;
+    private void ToggleCollapse() => Collapse = !Collapse;
+
+    private (string, string) BadgeStatus(DateTime start, DateTime end)
+    {
+        if (DateTime.Now < start) return ("badge-primary", "Upcoming");
+        else if (DateTime.Now > end) return ("badge-secondary", "Concluded");
+        else return ("badge-success", "Active");
+    }
+
+    private async Task HideElection()
+    {
+        ThisElection.Hidden = true;
+        await http.PutAsJsonAsync("api/Election", ThisElection);
+        await RefreshElections.InvokeAsync();
+    }
+
+    private async Task DeleteElection()
+    {
+        Collapse = true;
+        await http.DeleteAsync($"api/Election/{ThisElection.Id}");
+        await RefreshElections.InvokeAsync();
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        SubmitMessage = "";
+        loading = true;
+
+        if (ThisElection.Electorate.Contains(model.Voter))
+        {
+            SubmitMessage = "Voter with specified address already in electorate";
+        }
+        else
+        {
+            ThisElection.Electorate.Add(model.Voter);
+            await http.PutAsJsonAsync("api/Election", ThisElection);
+
+            if (model.EmailNewVoter)
+                await http.GetFromJsonAsync<bool>($"api/Email/{model.Voter}");
+
+            SubmitMessage = $"Added {model.Voter} to electorate";
+        }
+
+        loading = false;
+    }
+}
