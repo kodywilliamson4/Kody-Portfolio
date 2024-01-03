@@ -1,0 +1,10 @@
+bar :: Integer -> Integer
+bar x = foldl (*) 1 [a*a*a| a <- [2..], even(a), a < x]
+
+gtU x = (toUpper x = x)
+upperCharCount :: [Char] -> Integer
+upperCharCount word = length filter gtU word
+
+lessThree x = (length x < 3)
+shrtStrCount :: [String] -> Integer
+shrtStrCount x = length filter lessThree x

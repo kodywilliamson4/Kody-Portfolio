@@ -1,0 +1,65 @@
+Input three lines of text: 
+Kody
+Williamson
+BG
+Input the name of a file: 
+PythonRuby.txt
+The file is important
+The file is extraordinary
+The cube of integer 1 is 1
+The cube of integer 2 is 8
+The cube of integer 3 is 27
+The cube of integer 4 is 64
+The cube of integer 5 is 125
+The cube of integer 6 is 216
+The cube of integer 7 is 343
+The cube of integer 8 is 512
+The cube of integer 9 is 729
+The cube of integer 10 is 1000
+The cube of integer 11 is 1331
+The cube of integer 12 is 1728
+The cube of integer 13 is 2197
+The cube of integer 14 is 2744
+The cube of integer 15 is 3375
+The cube of integer 16 is 4096
+The cube of integer 17 is 4913
+The cube of integer 18 is 5832
+The cube of integer 19 is 6859
+The cube of integer 20 is 8000
+The cube of integer 21 is 9261
+The cube of integer 22 is 10648
+The cube of integer 23 is 12167
+The cube of integer 24 is 13824
+The cube of integer 25 is 15625
+The cube of integer 26 is 17576
+The cube of integer 27 is 19683
+The cube of integer 28 is 21952
+The cube of integer 29 is 24389
+The cube of integer 30 is 27000
+The cube of integer 31 is 29791
+The cube of integer 32 is 32768
+The cube of integer 33 is 35937
+The cube of integer 34 is 39304
+The cube of integer 35 is 42875
+The cube of integer 36 is 46656
+The cube of integer 37 is 50653
+The cube of integer 38 is 54872
+The cube of integer 39 is 59319
+The cube of integer 40 is 64000
+The cube of integer 41 is 68921
+The cube of integer 42 is 74088
+The cube of integer 43 is 79507
+The cube of integer 44 is 85184
+The cube of integer 45 is 91125
+The cube of integer 46 is 97336
+The cube of integer 47 is 103823
+The cube of integer 48 is 110592
+The cube of integer 49 is 117649
+The cube of integer 50 is 125000
+How many times do you want to flip the coin between 10 and 200
+50
+The ratio of heads to tails is 25 to 25
+The number of words in the story is: 8425
+The number of distinct words in the story is: 2462
+The second most frequest word is of which appears 230 times.
+The number of words that start with s: 245

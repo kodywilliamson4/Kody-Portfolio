@@ -1,0 +1,12 @@
+﻿  node.cpp
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(150,32): error C3867: 'main_savitch_5::node::link': non-standard syntax; use '&' to create a pointer to member
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(157,39): error C3867: 'main_savitch_5::node::link': non-standard syntax; use '&' to create a pointer to member
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(160,26): error C3867: 'main_savitch_5::node::link': non-standard syntax; use '&' to create a pointer to member
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(160,26): error C2568: '=': unable to resolve function overload
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(160,26): message : could be 'main_savitch_5::node *main_savitch_5::node::link(void)'
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(160,26): message : or       'const main_savitch_5::node *main_savitch_5::node::link(void) const'
+C:\Users\kodyw\source\repos\Williamson-P3\node.cpp(163,28): error C3867: 'main_savitch_5::node::link': non-standard syntax; use '&' to create a pointer to member
+  poly.cpp
+  polydr.cpp
+C:\Users\kodyw\source\repos\Williamson-P3\polydr.cpp(11,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating Code...

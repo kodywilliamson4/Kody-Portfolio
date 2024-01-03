@@ -1,0 +1,24 @@
+object Task4 {
+    def main (args:Array[String]){
+
+        var lineCount = 0
+        var list = List()
+        
+
+        val fileHandler  =  Source.fromFile("story.txt")
+        val lineIterator = fileHandler.getLines
+
+        for(line <- lineIterator){
+        lineCount = lineCount + 1
+
+        
+        val list = line.split("\s+")
+        val word = list(0)
+
+        }
+
+        // Print all the outputs
+
+        fileHandler.close()
+      }
+}

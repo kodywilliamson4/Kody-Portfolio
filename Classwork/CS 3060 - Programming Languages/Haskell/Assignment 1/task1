@@ -1,0 +1,2 @@
+string = "Hello, you are hard working"
+main = print(string)

@@ -1,0 +1,42 @@
+Select sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000   1000000   1000000   1000000     499500    499500         -
+ 2000   4000000   4000000   4000000    1999000   1999000         -
+ 4000  16000000  16000000  16000000    7998000   7998000         -
+ 8000  64000000  64000000  64000000   31996000  31996000  31996000
+Merge sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000      9966      9966      9966       2004      2004         -
+ 2000     21932     21932     21932       4004      4004         -
+ 4000     47863     47863     47863       8004      8004         -
+ 8000    103726    103726    103726      16004     16004     16004
+Bubble sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000   1000000   1000000      1000     499500    499500         -
+ 2000   4000000   4000000      2000    1999000   1999000         -
+ 4000  16000000  16000000      4000    7998000   7998000         -
+ 8000  64000000  64000000      8000   31996000  31996000      7999
+Insert sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000   1000000   1000000      1000     500499    249144         -
+ 2000   4000000   4000000      2000    2000999   1009741         -
+ 4000  16000000  16000000      4000    8001999   3995131         -
+ 8000  64000000  64000000      8000   32003999  15887824      7999
+Heap sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000      9966      9966      9966       8490      9768         -
+ 2000     21932     21932     21932      18992     21471         -
+ 4000     47863     47863     47863      42087     47082         -
+ 8000    103726    103726    103726      92048    102271    179643
+Quick sort:
+    n  Expected  Expected  Expected     Actual    Actual    Actual
+          worst   average      best descending    random ascending
+ 1000   1000000      9966      9966     501498     16605         -
+ 2000   4000000     21932     21932    2002998     35537         -
+ 4000  16000000     47863     47863    8005998     79463         -
+ 8000  64000000    103726    103726   32011998    179998  32011998

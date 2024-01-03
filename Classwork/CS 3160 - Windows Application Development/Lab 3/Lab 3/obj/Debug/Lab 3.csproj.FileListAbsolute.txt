@@ -1,0 +1,10 @@
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\bin\Debug\Lab 3.exe.config
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\bin\Debug\Lab 3.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\bin\Debug\Lab 3.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab 3.csprojAssemblyReference.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab_3.Form1.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab_3.Form2.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab_3.Properties.Resources.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab 3.csproj.GenerateResource.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab 3.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 3\Lab 3\obj\Debug\Lab 3.pdb

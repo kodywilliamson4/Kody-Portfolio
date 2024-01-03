@@ -1,0 +1,4 @@
+﻿  testtab1.cpp
+C:\Users\kodyw\source\repos\Williamson-E11\Williamson-E11\table1template.h(14,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\kodyw\source\repos\Williamson-E11\Williamson-E11\testtab1.cpp(55,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Williamson-E11.vcxproj -> C:\Users\kodyw\source\repos\Williamson-E11\Debug\Williamson-E11.exe

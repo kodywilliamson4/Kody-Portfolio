@@ -1,0 +1,32 @@
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\PhoneApp.csprojResolveAssemblyReference.cache
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\PhoneApp.Form1.resources
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\Lab6.Properties.Resources.resources
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\PhoneApp.csproj.GenerateResource.Cache
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\PhoneApp.PhoneForm.resources
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\bin\Debug\Lab6.exe.config
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\bin\Debug\Lab6.exe
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\bin\Debug\Lab6.pdb
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\Lab6.exe
+F:\CS 3160 Spring 2017\L A B S\Lab 6\Lab6\obj\Debug\Lab6.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\bin\Debug\Lab6.exe.config
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\bin\Debug\Lab6.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\bin\Debug\Lab6.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.csprojAssemblyReference.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\Lab6.FieldExceptionForm.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.Form1.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.PhoneForm.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\Lab6.Properties.Resources.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.csproj.GenerateResource.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\Lab6.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\PhoneApp SEED\obj\Debug\Lab6.pdb
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\bin\Debug\Lab6.exe.config
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\bin\Debug\Lab6.exe
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\bin\Debug\Lab6.pdb
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.csprojAssemblyReference.cache
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\Lab6.FieldExceptionForm.resources
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.Form1.resources
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.PhoneForm.resources
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\Lab6.Properties.Resources.resources
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\PhoneApp.csproj.GenerateResource.cache
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\Lab6.exe
+C:\Users\kodyw\Desktop\CS3160\PhoneApp SEED\obj\Debug\Lab6.pdb

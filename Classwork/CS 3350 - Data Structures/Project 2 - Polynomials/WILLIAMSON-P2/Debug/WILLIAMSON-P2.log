@@ -1,0 +1,16 @@
+﻿  poly.cpp
+C:\Users\kodyw\Downloads\poly.cpp(158,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(189,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(191,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(201,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(203,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(277,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(280,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(282,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\kodyw\Downloads\poly.cpp(307,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(309,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(321,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(323,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(337,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\kodyw\Downloads\poly.cpp(339,22): warning C4018: '<': signed/unsigned mismatch
+  WILLIAMSON-P2.vcxproj -> C:\Users\kodyw\source\repos\WILLIAMSON-P2\Debug\WILLIAMSON-P2.exe

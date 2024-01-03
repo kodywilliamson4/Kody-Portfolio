@@ -1,0 +1,4 @@
+numbers = [30,22,18]
+divfive = [x | x <- numbers, x / 5 == 0]
+
+main = print(divfive)

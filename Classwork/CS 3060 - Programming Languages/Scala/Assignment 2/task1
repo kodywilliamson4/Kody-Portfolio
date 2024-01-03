@@ -1,0 +1,46 @@
+abstract class Shape(  var color:String = "blue"){
+}
+
+class Circle (var color:String = "blue", var radius:Double = 2.0) extends Shape(color) {
+  def area() {3.14 * radius * radius}
+  def this(radius:Double){
+    this("blue", radius)
+  }
+}
+
+class Rectangle(var color:String = "blue", var width:Double = 1.0, var len:Double = 1.0) extends Shape(color) {
+  def area() { width * len}
+  def this(width:Double, len:Double){
+    this("blue", width, len)
+  }
+}
+
+
+object Task1 {
+    def main (args:Array[String]){
+      
+      var list:List[Shape] = Nil
+      val r = scala.util.Random
+      var num = 0
+      var total = 0
+      
+      for( a <- 0 to 49)
+      {
+        num = r.nextInt(2)
+        if(num == 0){
+          list = list :+ new Rectangle()
+        }
+        if(num ==0){
+          list = list :+ new Circle()
+        }
+      }
+      
+      shape.foreach {
+        case x:Rectangle=> total = total + x.area()
+        case x:Circle=> total = total + x.area()
+      }
+      
+      println(total)
+      
+      }
+}

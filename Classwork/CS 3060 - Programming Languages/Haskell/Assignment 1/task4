@@ -1,0 +1,5 @@
+toDigits :: x => x -> [x]
+toDigits 0 = []
+toDigits x = digs(x / 10) ++ [x % 10]
+
+main = toDigits(3754)

@@ -1,0 +1,9 @@
+upperCard :: (Card,Card) -> Card
+upperCard x y = if cardValue x > cardValue y then x else y
+
+sumValue :: Hand -> Integer
+sumValue [] = 0
+sumValue (h:t) = cardValue h + sumValue t
+
+lowerHand :: (Hand,Hand) -> (Hand)
+lowerHand x y = if sumValue x > sumValue y then y else x

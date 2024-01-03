@@ -1,0 +1,10 @@
+This is your readme file. Edit this file to let the user (e.g. TA) know 
+how to read/run your files/code, expected input/output, and more (if necessary). 
+
+This program will ask you for 5 different inputs throughout.
+Running it in console using 'ruby hw1_kodyw.rb' will run the program.
+You will first be asked 3 input which will be stored in a text file (savedLines.txt).
+You will then be asked for the name of a file and if it contains certain program languages in its name then it will provide special text.
+Next the program will show the cubes of integers 1 through 50.
+Last input wise you will have to input an integer and the program will then flip a coin that many times and give the ratio of these tosses.
+Lastly, a story.txt file will be searched through and different statistics will be pulled from the document.

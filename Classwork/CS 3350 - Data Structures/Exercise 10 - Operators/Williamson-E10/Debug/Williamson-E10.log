@@ -1,0 +1,6 @@
+﻿  poly1.cpp
+  poly1dr.cpp
+  Generating Code...
+C:\Users\kodyw\source\repos\Williamson-E10\Williamson-E10\poly1.cpp(208): warning C4717: 'operator>>': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\kodyw\source\repos\Williamson-E10\Williamson-E10\poly1.cpp(216): warning C4717: 'operator<<': recursive on all control paths, function will cause runtime stack overflow
+  Williamson-E10.vcxproj -> C:\Users\kodyw\source\repos\Williamson-E10\Debug\Williamson-E10.exe

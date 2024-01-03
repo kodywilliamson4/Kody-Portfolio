@@ -1,0 +1,3 @@
+﻿  testtab2.cpp
+C:\Users\kodyw\source\repos\WILLIAMSON-E12\WILLIAMSON-E12\testtab2.cpp(59,42): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  WILLIAMSON-E12.vcxproj -> C:\Users\kodyw\source\repos\WILLIAMSON-E12\Debug\WILLIAMSON-E12.exe

@@ -1,0 +1,8 @@
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\bin\Debug\StdDialog.dll
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\bin\Debug\StdDialog.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.AboutBox.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.csproj.GenerateResource.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.dll
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.csprojAssemblyReference.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 7\StdDialog\obj\Debug\StdDialog.Splash.resources

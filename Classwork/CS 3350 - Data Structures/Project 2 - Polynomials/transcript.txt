@@ -1,0 +1,72 @@
+Available commands:
+?: to print this menu
+H: to print this menu
+R n: to read a value for polynomial n
+P n: to print the value of polynomial n
++ i j k: to add polynomials i and j and store result in k
+E n v: to evaluate polynomial n with its variable set to value v
+Q: to quit
+r 0
+Reading polynomial 0
+Input a polynomial by first specifying the variable and then the terms in any order.
+Each term is specified by an integer coefficient and
+a non-negative integer exponent.
+Indicate END by specifying a dummy term with
+a zero coefficient and/or a negative exponent.
+x 3 2 -4 3 5 0 0
+p0
+Printing polynomial 0
+-4x3 +3x2 +5
+r1
+Reading polynomial 1
+Input a polynomial by first specifying the variable and then the terms in any order.
+Each term is specified by an integer coefficient and
+a non-negative integer exponent.
+Indicate END by specifying a dummy term with
+a zero coefficient and/or a negative exponent.
+x 2 4 -3 2 -4 1 2 0 -5 -2
+p 1
+Printing polynomial 1
+2x4 -3x2 -4x1 +2
+R 6
+Reading polynomial 6
+Input a polynomial by first specifying the variable and then the terms in any order.
+Each term is specified by an integer coefficient and
+a non-negative integer exponent.
+Indicate END by specifying a dummy term with
+a zero coefficient and/or a negative exponent.
+x -4 4 -8 3 12 2 8 1 6 0 0
+R 7
+Reading polynomial 7
+Input a polynomial by first specifying the variable and then the terms in any order.
+Each term is specified by an integer coefficient and
+a non-negative integer exponent.
+Indicate END by specifying a dummy term with
+a zero coefficient and/or a negative exponent.
+y 4 3 2 1 0
+p7
+Printing polynomial 7
+4y3 +2
+E 6 2.0
+-58
+e 7 -1.5
+0
+?
+Available commands:
+?: to print this menu
+H: to print this menu
+R n: to read a value for polynomial n
+P n: to print the value of polynomial n
++ i j k: to add polynomials i and j and store result in k
+E n v: to evaluate polynomial n with its variable set to value v
+Q: to quit
+h
+Available commands:
+?: to print this menu
+H: to print this menu
+R n: to read a value for polynomial n
+P n: to print the value of polynomial n
++ i j k: to add polynomials i and j and store result in k
+E n v: to evaluate polynomial n with its variable set to value v
+Q: to quit
+q

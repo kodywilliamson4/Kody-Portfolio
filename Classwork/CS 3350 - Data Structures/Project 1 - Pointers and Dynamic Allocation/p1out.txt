@@ -1,0 +1,38 @@
+Shrinking the array, allocating 5 records, and ...
+deallocating 10 records.
+
+Original data:
+
+10 20000
+
+20 10000
+
+30 40000
+
+25 15000
+
+15 45000
+
+Data sorted by the ID:
+
+10 20000
+
+15 45000
+
+20 10000
+
+25 15000
+
+30 40000
+
+Data sorted by the salary:
+
+20 10000
+
+25 15000
+
+10 20000
+
+30 40000
+
+15 45000

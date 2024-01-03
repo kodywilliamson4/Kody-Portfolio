@@ -1,0 +1,56 @@
+Input five integers one after another:
+1
+5
+7
+9
+10
+Integer input done
+1
+5
+7
+9
+10
+Input three floating point numbers one after another:
+2.3
+6.7
+8.2
+Floating point input done
+6.7
+2.3
+8.2
+8.2
+2.3
+6.7
+8.2
+2.3
+6.7
+Input three floating point numbers one after another:
+2.3
+6.7
+2.3
+Floating point input done
+2.3
+6.7
+2.3
+Input five strings one after another:
+The
+green
+cow
+says
+moo
+String input done
+moo
+cow
+The
+green
+says
+says
+green
+The
+cow
+moo
+says
+green
+The
+cow
+moo

@@ -1,0 +1,27 @@
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\bin\Debug\Lab 2.exe.config
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\bin\Debug\Lab 2.exe
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\bin\Debug\Lab 2.pdb
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab 2.csprojAssemblyReference.cache
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab_2.Form1.resources
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab_2.Properties.Resources.resources
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab 2.csproj.GenerateResource.cache
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab 2.exe
+C:\Users\Connor\Documents\CS 3160\Lab 2\Lab 2\obj\Debug\Lab 2.pdb
+C:\Users\kodyw\Desktop\CS3160\Lab 2\bin\Debug\Lab 2.exe.config
+C:\Users\kodyw\Desktop\CS3160\Lab 2\bin\Debug\Lab 2.exe
+C:\Users\kodyw\Desktop\CS3160\Lab 2\bin\Debug\Lab 2.pdb
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab 2.csprojAssemblyReference.cache
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab_2.Form1.resources
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab_2.Properties.Resources.resources
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab 2.csproj.GenerateResource.cache
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab 2.exe
+C:\Users\kodyw\Desktop\CS3160\Lab 2\obj\Debug\Lab 2.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\bin\Debug\Lab 2.exe.config
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\bin\Debug\Lab 2.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\bin\Debug\Lab 2.pdb
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab 2.csprojAssemblyReference.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab_2.Form1.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab_2.Properties.Resources.resources
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab 2.csproj.GenerateResource.cache
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab 2.exe
+C:\Users\Connor\Documents\CS 3160\CS3160\Lab 2\obj\Debug\Lab 2.pdb
